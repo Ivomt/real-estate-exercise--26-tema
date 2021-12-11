@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface NeghborhoodRepository extends JpaRepository <Neighborhood, Long>{
+public interface NeighborhoodRepository extends JpaRepository <Neighborhood, Long>{
 
     Optional<Neighborhood> findByName (String name);  //метод за търсене на квартали по име
 }

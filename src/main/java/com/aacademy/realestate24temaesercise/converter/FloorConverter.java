@@ -9,12 +9,14 @@ public class FloorConverter {
 
     public FloorDto toFloorDto(Floor floor){  //от модела Floor искаме да върнем FloorDto,
         return FloorDto.builder()               //конвертираме от един клас в друг
+                .id(floor.getId())
                 .number(floor.getNumber())
                 .build();
     }
 
     public Floor toFloor(FloorDto floorDto){ // обратно на горния метод
         return Floor.builder()
+                .id(floorDto.getId())
                 .number(floorDto.getNumber())
                 .build();
     }

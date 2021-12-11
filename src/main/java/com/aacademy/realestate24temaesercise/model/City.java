@@ -12,10 +12,10 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "neighborhoods")
+@Table(name = "cities")
 @Builder
 @Getter
-public class Neighborhood {
+public class City {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,6 +25,10 @@ public class Neighborhood {
     @Column(nullable = false,unique = true)
     private String name;
 
-    @ManyToMany(mappedBy = "neighborhoods")
-    private Set<City> cities;
+    @ManyToMany
+    @JoinTable(name = "cities_neighborhoods",
+               joinColumns = @JoinColumn(name = "city_id"),
+                inverseJoinColumns = @JoinColumn(name = "neighborhood_id"))
+    private Set<Neighborhood>neighborhoods;
+
 }
