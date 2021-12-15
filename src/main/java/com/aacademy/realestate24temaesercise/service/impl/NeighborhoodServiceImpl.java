@@ -1,6 +1,6 @@
 package com.aacademy.realestate24temaesercise.service.impl;
 
-import com.aacademy.realestate24temaesercise.exception.ResourceNutFoundException;
+import com.aacademy.realestate24temaesercise.exception.ResourceNotFoundException;
 import com.aacademy.realestate24temaesercise.model.Neighborhood;
 import com.aacademy.realestate24temaesercise.repository.NeighborhoodRepository;
 import com.aacademy.realestate24temaesercise.service.NeighborhoodService;
@@ -24,13 +24,13 @@ public class NeighborhoodServiceImpl implements NeighborhoodService {
     @Override
     public Neighborhood findByName(String name) {
         return neighborhoodRepository.findByName(name)
-                .orElseThrow(()->new ResourceNutFoundException(String.format("Neighborhood with name: %s does not exists", name)));
+                .orElseThrow(()->new ResourceNotFoundException(String.format("Neighborhood with name: %s does not exists", name)));
     }
 
     @Override
     public Neighborhood findById(Long id) {
         return neighborhoodRepository.findById(id)
-                .orElseThrow(()->new ResourceNutFoundException(String.format("Neighborhood with id: %s does not exists", id)));
+                .orElseThrow(()->new ResourceNotFoundException(String.format("Neighborhood with id: %s does not exists", id)));
     }
 
     @Override

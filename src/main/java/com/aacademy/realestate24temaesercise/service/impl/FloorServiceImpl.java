@@ -1,7 +1,7 @@
     package com.aacademy.realestate24temaesercise.service.impl;
 
 import com.aacademy.realestate24temaesercise.exception.DuplicateRecordException;
-import com.aacademy.realestate24temaesercise.exception.ResourceNutFoundException;
+import com.aacademy.realestate24temaesercise.exception.ResourceNotFoundException;
 import com.aacademy.realestate24temaesercise.model.Floor;
 import com.aacademy.realestate24temaesercise.repository.FloorRepository;
 import com.aacademy.realestate24temaesercise.service.FloorService;
@@ -9,9 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
-import javax.swing.*;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Service
@@ -38,13 +36,13 @@ public class FloorServiceImpl implements FloorService {
     @Override
     public Floor findByNumber(Integer number) {
         return floorRepository.findByNumber(number)
-                .orElseThrow(() -> new ResourceNutFoundException(String.format("Floor %d does not exists", number)));
+                .orElseThrow(() -> new ResourceNotFoundException(String.format("Floor %d does not exists", number)));
     }
 
     @Override
     public Floor findById(Long id) {
         return floorRepository.findById(id)     // проверява дали го има в базата - id-то
-                .orElseThrow(() -> new ResourceNutFoundException(String.format("Floor with id %d does not exists", id)));  // ако го няма - хвърля грвшка
+                .orElseThrow(() -> new ResourceNotFoundException(String.format("Floor with id %d does not exists", id)));  // ако го няма - хвърля грвшка
     }
 
     @Override

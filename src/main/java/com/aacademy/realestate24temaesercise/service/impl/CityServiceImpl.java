@@ -1,6 +1,6 @@
 package com.aacademy.realestate24temaesercise.service.impl;
 
-import com.aacademy.realestate24temaesercise.exception.ResourceNutFoundException;
+import com.aacademy.realestate24temaesercise.exception.ResourceNotFoundException;
 import com.aacademy.realestate24temaesercise.model.City;
 import com.aacademy.realestate24temaesercise.model.Neighborhood;
 import com.aacademy.realestate24temaesercise.repository.CityRepository;
@@ -24,7 +24,7 @@ public class CityServiceImpl implements CityService {
     @Override
     public City findById(Long id) {
         return cityRepository.findById(id)
-                .orElseThrow(()->new ResourceNutFoundException(String.format("City with id %d does not exists.",id)));
+                .orElseThrow(()->new ResourceNotFoundException(String.format("City with id %d does not exists.",id)));
     }
 
     @Override
