@@ -23,7 +23,7 @@ public class NeighborhoodController {
     }
     @GetMapping
     public ResponseEntity<Set<NeighborhoodDto>> findAll() {  // ResponseEntity.ок - дава достъп до това какво ще връщаме като статус - 200,401
-                                                          // Set<NeighborhoodDto> - това е другият вариант, но не контролираме статуса
+                                                              // Set<NeighborhoodDto> - това е другият вариант, но не контролираме статуса
 
         return ResponseEntity.ok(neighborhoodService
                     .findAll()

@@ -1,8 +1,6 @@
 package com.aacademy.realestate24temaesercise.converter;
 
-import com.aacademy.realestate24temaesercise.dto.FloorDto;
 import com.aacademy.realestate24temaesercise.dto.NeighborhoodDto;
-import com.aacademy.realestate24temaesercise.model.Floor;
 import com.aacademy.realestate24temaesercise.model.Neighborhood;
 import org.springframework.stereotype.Component;
 
