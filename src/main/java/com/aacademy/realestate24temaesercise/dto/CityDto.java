@@ -12,7 +12,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Builder
-public class CityDto {
+public class    CityDto {
 
     private Long id;
 
