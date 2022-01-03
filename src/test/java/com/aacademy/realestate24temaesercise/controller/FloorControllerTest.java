@@ -29,7 +29,7 @@ public class FloorControllerTest extends BaseControllerTest {
     private FloorConverter floorConverter;
 
     @Test
-    void save() throws Exception {          //юнит тест за контролер-задължително искат throws Exception
+    public void save() throws Exception {          //юнит тест за контролер-задължително искат throws Exception
 
         FloorDto floorDto = FloorDto.builder().number(1).build();    //създава се Дто
         String reqJson = objectMapper.writeValueAsString(floorDto);  //objectMapper служи да го направи като jSon
@@ -54,7 +54,7 @@ public class FloorControllerTest extends BaseControllerTest {
         when(floorService.findById(any(Long.class))).thenReturn(Floor.builder().build());
         when(floorConverter.toFloorDto(any(Floor.class))).thenReturn(FloorDto.builder().id(1L).number(5).build());
 
-        mockMvc.perform(get("floors/id/1"))
+        mockMvc.perform(get("/floors/id/1"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.id", is(1)))

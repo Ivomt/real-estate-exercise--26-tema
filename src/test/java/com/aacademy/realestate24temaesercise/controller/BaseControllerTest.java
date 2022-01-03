@@ -12,7 +12,7 @@ import org.springframework.test.web.servlet.MockMvc;
 public abstract class BaseControllerTest {
 
     @Autowired
-    protected MockMvc mockMvc;   //protected e, защото ще се използва в други класове (абстракт е този), Floor щенаследи този BaseController
+    protected MockMvc mockMvc;   //protected e, защото ще се използва в други класове (абстракт е този), Floor ще наследи този BaseController
                                 // и ще може да си прави заявки към endpoint (postmaping, getmaping...)
 
     @Autowired

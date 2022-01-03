@@ -10,4 +10,5 @@ public class RealEstate24TemaEserciseApplication {
 		SpringApplication.run(RealEstate24TemaEserciseApplication.class, args);
 	}
 
+	
 }
