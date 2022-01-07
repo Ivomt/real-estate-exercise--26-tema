@@ -6,8 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -25,6 +23,7 @@ public class Image {
     @Column(nullable = false)
     private String name;
 
-    // @ManyToOne(mappedBy = "neighborhoods")
-    // private Set<City> cities;
+    @ManyToOne
+    @JoinColumn(name = "estate_id",foreignKey = @ForeignKey(name = "fk_estate_id"))
+    private Estate estate;
 }

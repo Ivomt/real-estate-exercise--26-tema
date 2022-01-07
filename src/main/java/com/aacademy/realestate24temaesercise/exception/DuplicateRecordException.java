@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class DuplicateRecordException extends RuntimeException {
 
     public DuplicateRecordException(String message) {
+
         super(message);
     }
 }

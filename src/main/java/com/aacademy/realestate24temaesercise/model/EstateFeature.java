@@ -27,7 +27,7 @@ public class EstateFeature {
     @Column(nullable = false)
     private String feature;
 
-    @ManyToMany(mappedBy = "estateFeatures")
+   @ManyToMany(mappedBy = "estateFeatures")
     private Set<Estate> estates;
 
 

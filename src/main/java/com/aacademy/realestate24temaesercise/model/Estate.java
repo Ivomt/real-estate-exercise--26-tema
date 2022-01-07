@@ -27,23 +27,24 @@ public class Estate {
     private Quadrature quadrature;
 
     @ManyToOne
-    @JoinColumn(name = "floor_id",foreignKey = @ForeignKey(name = "fk_floor_id"))
+    @JoinColumn(name = "floor_id", foreignKey = @ForeignKey(name = "fk_floor_id"))
     private Floor floor;
 
     @ManyToOne
-    @JoinColumn(name = "city_id",foreignKey = @ForeignKey(name = "fk_city_id"))
+    @JoinColumn(name = "city_id", foreignKey = @ForeignKey(name = "fk_city_id"))
     private City city;
 
 
     @ManyToMany
     @JoinTable(
             name = "estate_estate_features",
-            joinColumns = @JoinColumn(name = "estate_id",referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "estate_feature_id",referencedColumnName = "id"))
+            joinColumns = @JoinColumn(name = "estate_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "estate_feature_id", referencedColumnName = "id"))
 
 
     private Set<EstateFeature> estateFutures;
 
-
+    @OneToMany(mappedBy = "estate")
+    private Set<Image>images;
 
 }
